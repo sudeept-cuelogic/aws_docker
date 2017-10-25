@@ -13,8 +13,9 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore secret information
+# Ignore configuration information
 /config/secrets.yml
+/config/database.yml
 
 /node_modules
 /yarn-error.log
