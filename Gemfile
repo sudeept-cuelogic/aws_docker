@@ -29,11 +29,15 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Use aws-sdk for all aws services
-gem 'aws-sdk', '3.0.1'
+gem 'aws-sdk', '2.10.71'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'haml', '4.0.7'
 gem 'haml-rails', '1.0'
+gem 'elasticsearch-model', '5.0.1'
+gem 'elasticsearch', '5.0.4'
+gem 'faraday_middleware-aws-signers-v4', '0.1.9'
+gem 'redis', '4.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,6 +45,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry', '0.11.2'
+  gem 'awesome_print', '1.8'
 end
 
 group :development do
