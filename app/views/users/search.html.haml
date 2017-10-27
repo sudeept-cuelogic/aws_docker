@@ -1,0 +1,26 @@
+%h2
+  Search Result
+%table
+  %tr
+    %th
+      First Name
+    %th
+      Last Name
+    %th
+      Email
+    %th
+      Birth Date
+  - @users[:elastic].each do |user|
+    %tr
+      %td
+        = "#{user._source.first_name}"
+      %td
+        = "#{user._source.last_name}"
+      %td
+        = "#{user._source.email}"
+      %td
+        = "#{user._source.dob}"
+  %tr
+    - @users[:redis].each do |key, val|
+      %td
+        = "#{val}"
