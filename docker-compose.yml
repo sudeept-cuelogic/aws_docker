@@ -1,6 +1,33 @@
-version: '3'
+version: "3"
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    links:
+      - app
     ports:
-      - "5000:5000"
+      - "80:80"
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+  app:
+    build: .
+    volumes:
+      - /var/www/aws-docker
+    ports:
+      - "3000"
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+
