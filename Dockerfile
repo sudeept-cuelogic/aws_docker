@@ -1,4 +1,5 @@
 FROM ruby:2.4.1
+RUN apt-get clean
 RUN apt-get update -qq \
     && apt-get install -y build-essential libpq-dev
 ENV RAILS_ROOT /var/www/aws-docker
@@ -11,7 +12,8 @@ RUN gem install bundler
 RUN bundle install
 COPY . .
 EXPOSE 80
-CMD bundle exec puma -C config/puma.rb
+CMD rails server -p 3000
+# CMD bundle exec puma -C config/puma.rb
 
 
 # # # This docker build is for search service worker

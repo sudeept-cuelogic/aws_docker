@@ -1,7 +1,7 @@
 module CacheOperations
   class << self
-    def redis_client
-      @redis ||= Redis.new
+    def redis_client(host = REDIS_HOST_URL)
+      @redis ||= Redis.new #host: host
     end
 
     def add_data(query_hash)
