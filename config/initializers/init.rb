@@ -5,4 +5,4 @@ SEARCH_SERVICE = 'search'.freeze
 CACHE_SERVICE = 'cache'.freeze
 HOST_IP = Rails.application.secrets.host_ip
 ELASTICSEARCH_HOST_URL = "http://#{HOST_IP}:9200".freeze
-REDIS_HOST_URL = "http://#{HOST_IP}".freeze
+REDIS_HOST_URL = "#{HOST_IP}".freeze
